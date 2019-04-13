@@ -1,2 +1,156 @@
 body {
-  background-color: pink; }
+  background-image: url("/assets/bg.jpg");
+  background-size: cover;
+  margin: 0px;
+  align-items: center; }
+
+#content {
+  padding: 5px;
+  display: flex;
+  justify-content: center; }
+
+#header {
+  position: sticky;
+  width: 100%; }
+
+#headerBG {
+  display: none; }
+
+#whiteHeader {
+  background-color: #FFFFFF;
+  height: 55px; }
+
+#greyHeader {
+  background-color: #3A3A3D;
+  height: 45px;
+  font-family: "Oswald", sans-serif;
+  color: #818285;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+
+#logo {
+  position: relative; }
+
+.dot {
+  display: none; }
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 25%;
+  text-align: center; }
+
+#aww {
+  border-left: 1px solid #818285; }
+
+#tippytaps {
+  border-right: 1px solid #818285;
+  border-left: 1px solid #818285; }
+
+#content {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+
+.subContent {
+  background-color: #FFFFFF;
+  padding: 5px;
+  width: 95%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.redditImage {
+  width: 80%; }
+
+.subImg {
+  width: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+
+.title {
+  font-family: "Oswald", sans-serif;
+  color: #3A3A3D;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; }
+
+.footerImg {
+  display: none; }
+
+@media only screen and (min-width: 671px) {
+  #headerBG {
+    display: initial;
+    position: absolute;
+    top: 20%; }
+  #aww {
+    border-left: none; }
+  #tippytaps {
+    border-right: none;
+    border-left: none; }
+  #whiteHeader {
+    max-height: 75px;
+    display: flex;
+    justify-content: center; }
+  #greyHeader {
+    background-color: #3A3A3D;
+    height: 50px;
+    font-family: "Oswald", sans-serif;
+    color: #818285;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  #logo {
+    position: relative; }
+  .dot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1px;
+    text-align: center; }
+  .favorites {
+    width: auto; } }
+
+@media only screen and (min-width: 1201px) {
+  #aww {
+    border-left: none; }
+  #tippytaps {
+    border-right: none;
+    border-left: none; }
+  #whiteHeader {
+    max-height: 80px;
+    display: flex;
+    justify-content: center; }
+  #greyHeader {
+    max-height: 50px; }
+  #logo {
+    align-self: center; }
+  .dot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1px;
+    text-align: center; }
+  .favorites {
+    width: auto; }
+  #footer {
+    height: 50px;
+    background-color: #3A3A3D;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+  .footerImg {
+    display: initial;
+    padding: 5px; } }
