@@ -10,7 +10,7 @@ body {
   justify-content: center; }
 
 #header {
-  position: sticky;
+  position: fixed;
   width: 100%; }
 
 #headerBG {
@@ -56,17 +56,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px; }
+  padding: 100px 10px 10px 10px; }
 
 .subContent {
   background-color: #FFFFFF;
   padding: 5px;
   width: 95%;
   margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  align-items: center;
+  max-height: 300px;
+  overflow: auto; }
 
 .redditImage {
   width: 80%; }
@@ -82,7 +81,28 @@ body {
   color: #3A3A3D;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  font-size: 20px; }
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: "Lato", sans-serif;
+  color: #818285;
+  font-size: 11px;
+  margin-top: 5px; }
+
+.selfText {
+  font-family: "Lato", sans-serif;
+  color: black;
+  font-size: 10px;
+  width: auto;
+  margin-top: 10px; }
+
+.dot2 {
+  margin-left: 3px;
+  margin-right: 3px; }
 
 .footerImg {
   display: none; }
@@ -118,7 +138,58 @@ body {
     padding: 1px;
     text-align: center; }
   .favorites {
-    width: auto; } }
+    width: auto; }
+  #content {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 125px 3vw 10px 3vw; }
+  .subContent {
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 38vw;
+    margin: 10px;
+    align-items: center;
+    max-height: 300px;
+    padding: 20px;
+    overflow: auto; }
+  .redditImage {
+    width: 80%; }
+  .subImg {
+    width: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+  .title {
+    font-family: "Oswald", sans-serif;
+    color: #3A3A3D;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 20px; }
+  .stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: "Lato", sans-serif;
+    color: #818285;
+    font-size: 16px; }
+  .selfText {
+    font-family: "Lato", sans-serif;
+    color: black;
+    font-size: 14px;
+    width: auto;
+    margin-top: 10px; }
+  .dot2 {
+    margin-left: 3px;
+    margin-right: 3px; }
+  .redditImage {
+    width: 40%; }
+  .footerImg {
+    display: none; } }
 
 @media only screen and (min-width: 1201px) {
   #aww {
@@ -142,15 +213,30 @@ body {
     text-align: center; }
   .favorites {
     width: auto; }
+  #content {
+    padding: 125px 16vw 10px 16vw; }
+  .subContent {
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 20vw;
+    margin: 10px;
+    align-items: center;
+    max-height: 300px;
+    padding: 20px;
+    overflow: auto; }
   #footer {
     height: 50px;
     background-color: #3A3A3D;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%; }
   .footerImg {
     display: initial;
     padding: 5px; } }
+
+@media only screen and (min-width: 1701px) {
+  #content {
+    padding: 125px 18vw 10px 18vw; } }
