@@ -3,6 +3,7 @@
 function getData(string) {
   function subRedditReqListener() {
     let object = JSON.parse(this.responseText).data.children;
+    console.log(object);
 
     object.forEach((elem) => {
       let subContent = document.createElement('div');
@@ -45,9 +46,38 @@ function getData(string) {
       dot.innerHTML = '&#8226';
       statsDiv.appendChild(dot);
 
+      function timeSince(date) {
+
+
+        let seconds = Math.floor((new Date() - date) / 1000);
+      
+        let interval = Math.floor(seconds / 31536000);
+      
+        if (interval > 1) {
+          return interval + " years";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+          return interval + " months";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+          return interval + " days";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+          return interval + " hours";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+          return interval + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+      }
+
       let timelapse = document.createElement('div');
       timelapse.className = 'timelapse statsItem';
-      timelapse.innerHTML = 'TBD';
+      timelapse.innerHTML = timeSince(new Date(elem.data.created*1000))
       statsDiv.appendChild(timelapse);
 
       let dot2 = document.createElement('div');

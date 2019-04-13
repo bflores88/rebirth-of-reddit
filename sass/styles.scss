@@ -3,6 +3,7 @@ $lightgray: #818285;
 $headingFont: 'Oswald', sans-serif;
 $textFont: 'Lato', sans-serif;
 
+@import 'header';
 
 body {
   background-image: url('/assets/bg.jpg');
@@ -17,58 +18,6 @@ body {
   justify-content: center;
 }
 
-#header {
-  position: fixed;
-  width: 100%;
-}
-
-#headerBG {
-  display: none;
-}
-
-#whiteHeader {
-  background-color: #FFFFFF;
-  height: 55px;
-}
-
-#greyHeader {
-  background-color: $graybar;
-  height: 45px;
-  font-family: $headingFont;
-  color: $lightgray;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-}
-
-#logo {
-  position: relative;
-}
-
-.dot {
-  display: none;
-}
-
-.favorites {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  width: 25%;
-  text-align: center;
-}
-
-#aww {
-  border-left: 1px solid $lightgray;
-
-}
-
-#tippytaps {
-  border-right: 1px solid $lightgray;
-  border-left: 1px solid $lightgray;
-}
-
 #content {
   width: auto;
   display: flex;
@@ -81,7 +30,7 @@ body {
 
 .subContent {
   background-color: #FFFFFF;
-  padding: 5px;
+  padding: 10px;
   width: 95%;
   margin-top: 10px;
   align-items: center;
@@ -119,20 +68,23 @@ body {
   margin-top: 5px;
 }
 
+.dot2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .selfText {
   font-family: $textFont;
   color: black;
-  font-size: 10px;
+  font-size: 14px;
   width: auto;
   margin-top: 10px;
 }
-
-
-.dot2 {
-  margin-left: 3px;
-  margin-right: 3px;
-}
-
 
 .footerImg {
   display: none;
@@ -146,22 +98,7 @@ body {
     position: absolute;
     top: 20%;
   }
-  
-  #aww {
-    border-left: none;
-  
-  }
-  
-  #tippytaps {
-    border-right: none;
-    border-left: none;
-  }
-  
-  #whiteHeader {
-    max-height: 75px;
-    display: flex;
-    justify-content: center;
-  }
+
   
   #greyHeader {
     background-color: $graybar;
@@ -171,10 +108,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-  
-  #logo {
-    position: relative;
   }
 
   .dot {
@@ -206,7 +139,7 @@ body {
     width: 38vw;
     margin: 10px;
     align-items: center;
-    max-height: 300px;
+    height: 400px;
     padding: 20px;
     overflow: auto;
   }
@@ -228,7 +161,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-size: 20px; 
+    font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; 
+    overflow: hidden;
   }
   
   .stats {
@@ -237,7 +174,7 @@ body {
     justify-content: flex-start;
     font-family: $textFont;
     color: $lightgray;
-    font-size: 16px;
+    font-size: 12px;
   }
   
   .selfText {
@@ -246,12 +183,10 @@ body {
     font-size: 14px;
     width: auto;
     margin-top: 10px;
-  }
-  
-  
-  .dot2 {
-    margin-left: 3px;
-    margin-right: 3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; 
+    overflow: hidden;
   }
 
   .redditImage {
@@ -266,27 +201,8 @@ body {
 
 @media only screen and (min-width: 1201px){
 
-  #aww {
-    border-left: none;
-  }
-  
-  #tippytaps {
-    border-right: none;
-    border-left: none;
-  }
-  
-  #whiteHeader {
-    max-height: 80px;
-    display: flex;
-    justify-content: center;
-  }
-  
   #greyHeader {
     max-height: 50px;
-  }
-  
-  #logo {
-    align-self: center;
   }
 
   .dot {

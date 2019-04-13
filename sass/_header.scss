@@ -1,0 +1,72 @@
+#header {
+  position: fixed;
+  width: 100%;
+}
+
+#whiteHeader {
+  background-color: #FFFFFF;
+  height: 55px;
+
+  @media only screen and (min-width: 671px){
+    max-height: 75px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 1201px){
+    max-height: 80px;
+  }
+}
+
+#headerBG {
+  display: none;
+}
+
+#logo {
+  position: relative;
+
+  @media only screen and (min-width: 671px){
+    position: absolute;
+  }
+}
+
+#plus {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 45px;
+}
+
+#greyHeader {
+  background-color: $graybar;
+  height: 45px;
+  font-family: $headingFont;
+  color: $lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.dot {
+  display: none;
+}
+.favorites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid $lightgray;
+  &:last-child{
+    border: 0;
+  }
+
+  @media only screen and (min-width: 671px){
+    border-right: none;
+
+  }
+
+}
+

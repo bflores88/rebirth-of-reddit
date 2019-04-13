@@ -1,3 +1,60 @@
+#header {
+  position: fixed;
+  width: 100%; }
+
+#whiteHeader {
+  background-color: #FFFFFF;
+  height: 55px; }
+  @media only screen and (min-width: 671px) {
+    #whiteHeader {
+      max-height: 75px;
+      display: flex;
+      justify-content: center; } }
+  @media only screen and (min-width: 1201px) {
+    #whiteHeader {
+      max-height: 80px; } }
+
+#headerBG {
+  display: none; }
+
+#logo {
+  position: relative; }
+  @media only screen and (min-width: 671px) {
+    #logo {
+      position: absolute; } }
+
+#plus {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 45px; }
+
+#greyHeader {
+  background-color: #3A3A3D;
+  height: 45px;
+  font-family: "Oswald", sans-serif;
+  color: #818285;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+
+.dot {
+  display: none; }
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid #818285; }
+  .favorites:last-child {
+    border: 0; }
+  @media only screen and (min-width: 671px) {
+    .favorites {
+      border-right: none; } }
+
 body {
   background-image: url("/assets/bg.jpg");
   background-size: cover;
@@ -9,47 +66,6 @@ body {
   display: flex;
   justify-content: center; }
 
-#header {
-  position: fixed;
-  width: 100%; }
-
-#headerBG {
-  display: none; }
-
-#whiteHeader {
-  background-color: #FFFFFF;
-  height: 55px; }
-
-#greyHeader {
-  background-color: #3A3A3D;
-  height: 45px;
-  font-family: "Oswald", sans-serif;
-  color: #818285;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; }
-
-#logo {
-  position: relative; }
-
-.dot {
-  display: none; }
-
-.favorites {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  width: 25%;
-  text-align: center; }
-
-#aww {
-  border-left: 1px solid #818285; }
-
-#tippytaps {
-  border-right: 1px solid #818285;
-  border-left: 1px solid #818285; }
-
 #content {
   width: auto;
   display: flex;
@@ -60,7 +76,7 @@ body {
 
 .subContent {
   background-color: #FFFFFF;
-  padding: 5px;
+  padding: 10px;
   width: 95%;
   margin-top: 10px;
   align-items: center;
@@ -93,16 +109,21 @@ body {
   font-size: 11px;
   margin-top: 5px; }
 
+.dot2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: 5px; }
+
 .selfText {
   font-family: "Lato", sans-serif;
   color: black;
-  font-size: 10px;
+  font-size: 14px;
   width: auto;
   margin-top: 10px; }
-
-.dot2 {
-  margin-left: 3px;
-  margin-right: 3px; }
 
 .footerImg {
   display: none; }
@@ -112,15 +133,6 @@ body {
     display: initial;
     position: absolute;
     top: 20%; }
-  #aww {
-    border-left: none; }
-  #tippytaps {
-    border-right: none;
-    border-left: none; }
-  #whiteHeader {
-    max-height: 75px;
-    display: flex;
-    justify-content: center; }
   #greyHeader {
     background-color: #3A3A3D;
     height: 50px;
@@ -129,8 +141,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center; }
-  #logo {
-    position: relative; }
   .dot {
     display: flex;
     flex-direction: column;
@@ -153,7 +163,7 @@ body {
     width: 38vw;
     margin: 10px;
     align-items: center;
-    max-height: 300px;
+    height: 400px;
     padding: 20px;
     overflow: auto; }
   .redditImage {
@@ -169,42 +179,36 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-size: 20px; }
+    font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
   .stats {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     font-family: "Lato", sans-serif;
     color: #818285;
-    font-size: 16px; }
+    font-size: 12px; }
   .selfText {
     font-family: "Lato", sans-serif;
     color: black;
     font-size: 14px;
     width: auto;
-    margin-top: 10px; }
-  .dot2 {
-    margin-left: 3px;
-    margin-right: 3px; }
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
   .redditImage {
     width: 40%; }
   .footerImg {
     display: none; } }
 
 @media only screen and (min-width: 1201px) {
-  #aww {
-    border-left: none; }
-  #tippytaps {
-    border-right: none;
-    border-left: none; }
-  #whiteHeader {
-    max-height: 80px;
-    display: flex;
-    justify-content: center; }
   #greyHeader {
     max-height: 50px; }
-  #logo {
-    align-self: center; }
   .dot {
     display: flex;
     flex-direction: column;
