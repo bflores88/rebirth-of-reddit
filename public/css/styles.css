@@ -177,18 +177,8 @@
       -webkit-box-orient: vertical;
       overflow: hidden; } }
 
-body {
-  background-image: url("/assets/bg.jpg");
-  background-size: cover;
-  margin: 0px;
-  align-items: center; }
-
 .footerImg {
   display: none; }
-
-@media only screen and (min-width: 671px) {
-  .footerImg {
-    display: none; } }
 
 @media only screen and (min-width: 1201px) {
   #footer {
@@ -203,3 +193,9 @@ body {
   .footerImg {
     display: initial;
     padding: 5px; } }
+
+body {
+  background-image: url("/assets/bg.jpg");
+  background-size: cover;
+  margin: 0px;
+  align-items: center; }

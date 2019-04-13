@@ -1,0 +1,22 @@
+.footerImg {
+  display: none;
+}
+
+@media only screen and (min-width: 1201px){
+
+  #footer {
+    height: 50px;
+    background-color: $graybar;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;;
+    bottom: 0;
+    width: 100%
+  }
+
+  .footerImg {
+    display: initial;
+    padding: 5px;
+  }
+}
