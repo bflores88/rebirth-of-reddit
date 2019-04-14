@@ -176,15 +176,3 @@ function goSearchReddit(){
   let updateDefaultError = document.querySelector('.errorNotice');
   updateDefaultError.style.display = 'block';
 }
-
-let getFooterLinks = document.querySelectorAll('.footerImg');
-getFooterLinks[0].addEventListener('click', goFaceBook);
-
-function goFaceBook() {
-  window.open('https://www.facebook.com/', '_blank');
-}
-
-getFooterLinks[1].addEventListener('click', goInstagram);
-function goInstagram() {
-  window.open('https://www.instagram.com/', '_blank');
-}
