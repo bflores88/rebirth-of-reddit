@@ -33,6 +33,9 @@ function getData(string) {
         let imgHere = document.createElement('img');
         imgHere.className = 'redditImage';
         imgHere.src = elem.data.thumbnail;
+        imgHere.onerror = function (){
+          imgHere.src = 'http://trifectaecosystems.com/wp-content/uploads/2015/04/snoo-300x208.jpg';
+        }
         subImg.appendChild(imgHere);
       }
 
