@@ -136,7 +136,8 @@
       margin: 15px;
       padding: 15px; }
       .subContent:hover {
-        border: 5px solid #F7941E; } }
+        border: 8px solid #F7941E;
+        padding: 7px; } }
 
 .subImg {
   width: 100%;
@@ -253,8 +254,15 @@
     bottom: 0;
     width: 100%; }
   .footerImg {
-    display: initial;
-    padding: 5px; } }
+    display: flex;
+    justify-content: center;
+    padding: 5px; }
+    .footerImg .orange {
+      display: none; }
+    .footerImg:hover .gray {
+      display: none; }
+    .footerImg:hover .orange {
+      display: block; } }
 
 body {
   background-image: url("/assets/bg.jpg");

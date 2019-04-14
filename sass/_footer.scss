@@ -2,21 +2,33 @@
   display: none;
 }
 
-@media only screen and (min-width: 1201px){
-
+@media only screen and (min-width: 1201px) {
   #footer {
     height: 50px;
     background-color: $graybar;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    position: fixed;;
+    position: fixed;
     bottom: 0;
-    width: 100%
+    width: 100%;
   }
 
   .footerImg {
-    display: initial;
+    display: flex;
+    justify-content: center;
     padding: 5px;
+    .orange {
+      display: none;
+    }
+
+    &:hover{
+      .gray {
+        display: none;
+      }
+      .orange{
+        display: block
+      }
+    }
   }
 }

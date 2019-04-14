@@ -65,7 +65,8 @@
     margin: 15px;
     padding: 15px;
     &:hover {
-      border: 5px solid $cardorange;
+      border: 8px solid $cardorange;
+      padding: 7px;
     }
   }
 }
