@@ -180,7 +180,7 @@
     .stats {
       font-size: 11px; } }
 
-.dot2 {
+.statDot {
   display: flex;
   justify-content: center;
   flex-direction: column;
