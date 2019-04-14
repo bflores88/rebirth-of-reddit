@@ -5,7 +5,8 @@ $headingFont: 'Oswald', sans-serif;
 $textFont: 'Lato', sans-serif;
 
 @import 'header';
-@import 'content';
+@import 'cards';
+@import 'searchbar';
 @import 'footer';
 
 body {

@@ -86,6 +86,7 @@
   color: $lightgray;
   &:hover {
     color: #EB582A;
+    cursor: pointer;
   }
 
   @media only screen and (min-width: 671px){

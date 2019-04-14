@@ -1,20 +1,29 @@
 'use strict';
 
+
 function getData(string) {
+
   function subRedditReqListener() {
+    content.innerHTML = '';
+
     let object = JSON.parse(this.responseText).data.children;
-    console.log(object);
+
+    let contentHolder = document.createElement('div');
+    contentHolder.className = 'container';
+    content.appendChild(contentHolder);
 
     object.forEach((elem) => {
       let subContent = document.createElement('div');
       subContent.className = 'subContent';
-      content.appendChild(subContent);
+      contentHolder.appendChild(subContent);
 
       subContent.addEventListener('click', goToLink);
 
       function goToLink() {
         window.open(elem.data.url, '_blank');
       }
+
+      console.log(elem.data.thumbnail.complete)
 
       if (elem.data.thumbnail !== 'self') {
         let subImg = document.createElement('div');
@@ -103,27 +112,36 @@ function getData(string) {
   subRedditReq.send();
 }
 
+plus.addEventListener('hover', changeSign);
+
+function changeSign(){
+  console.log('test');
+  plus.src = 'assets/plus_hover.svg';
+}
+
+logo.addEventListener('click', refreshWindow);
+
+function refreshWindow(){
+  location.reload();
+}
+
 instantPot.addEventListener('mousedown', getIPdata);
 function getIPdata() {
-  content.innerHTML = '';
   getData('instantpot');
 }
 
 aww.addEventListener('mousedown', getAwwData);
 function getAwwData() {
-  content.innerHTML = '';
   getData('aww');
 }
 
 tippytaps.addEventListener('mousedown', getTippyTaps);
 function getTippyTaps() {
-  content.innerHTML = '';
   getData('tippytaps');
 }
 
 random.addEventListener('mousedown', getRandom);
 function getRandom() {
-  content.innerHTML = '';
   let topics = [
     'science',
     'Showerthoughts',
@@ -137,4 +155,28 @@ function getRandom() {
   let randomIndex = Math.floor(Math.random() * 7);
   let pickTopic = topics[randomIndex];
   getData(pickTopic);
+}
+
+let searchReddit = document.querySelector('.submitSearch');
+searchReddit.addEventListener('click', goSearchReddit);
+
+function goSearchReddit(){
+  let getInput = document.querySelector('.searchInput');
+  getData(getInput.value);
+  
+  let updateDefaultError = document.querySelector('.errorNotice');
+  console.log('huh? ', updateDefaultError);
+  updateDefaultError.style.display = 'block';
+}
+
+let getFooterLinks = document.querySelectorAll('.footerImg');
+getFooterLinks[0].addEventListener('click', goFaceBook);
+
+function goFaceBook() {
+  window.open('https://www.facebook.com/', '_blank');
+}
+
+getFooterLinks[1].addEventListener('click', goInstagram);
+function goInstagram() {
+  window.open('https://www.instagram.com/', '_blank');
 }
