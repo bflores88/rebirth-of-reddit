@@ -23,7 +23,7 @@ function getData(string) {
         window.open(elem.data.url, '_blank');
       }
 
-      console.log(elem.data.thumbnail.complete)
+      console.log(elem.data.thumbnail.onload)
 
       if (elem.data.thumbnail !== 'self') {
         let subImg = document.createElement('div');
@@ -112,11 +112,17 @@ function getData(string) {
   subRedditReq.send();
 }
 
-plus.addEventListener('hover', changeSign);
+let plusHover = document.getElementById('plus');
+plusHover.addEventListener('mouseover', changeSign);
 
 function changeSign(){
-  console.log('test');
-  plus.src = 'assets/plus_hover.svg';
+  if(plusHover.alt === 'plus'){
+    plusHover.alt = 'minus';
+    plusHover.src = 'assets/plus_hover.svg';
+  } else {
+    plusHover.alt = 'plus';
+    plusHover.src = 'assets/plus_sign.svg';
+  }
 }
 
 logo.addEventListener('click', refreshWindow);
@@ -165,7 +171,6 @@ function goSearchReddit(){
   getData(getInput.value);
   
   let updateDefaultError = document.querySelector('.errorNotice');
-  console.log('huh? ', updateDefaultError);
   updateDefaultError.style.display = 'block';
 }
 
