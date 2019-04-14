@@ -54,7 +54,7 @@ function getData(string) {
       statsDiv.appendChild(author);
 
       let dot = document.createElement('div');
-      dot.className = 'dot2 statsItem';
+      dot.className = 'statDot statsItem';
       dot.innerHTML = '&#8226';
       statsDiv.appendChild(dot);
 
@@ -93,7 +93,7 @@ function getData(string) {
       statsDiv.appendChild(timelapse);
 
       let dot2 = document.createElement('div');
-      dot2.className = 'dot2 statsItem';
+      dot2.className = 'statDot statsItem';
       dot2.innerHTML = '&#8226';
       statsDiv.appendChild(dot2);
 

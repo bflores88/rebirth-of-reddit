@@ -10,7 +10,7 @@
       max-height: 75px;
       display: flex;
       justify-content: center; } }
-  @media only screen and (min-width: 1201px) {
+  @media only screen and (min-width: 992px) {
     #whiteHeader {
       max-height: 80px; } }
 
@@ -204,23 +204,33 @@
       -webkit-line-clamp: 4; } }
 
 .search {
-  width: 30vw;
-  position: absolute;
-  top: 40%;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Lato", sans-serif; }
+  @media only screen and (min-width: 671px) {
+    .search {
+      margin-top: 20%; } }
 
 .searchInput {
-  width: 100%; }
+  width: 100%;
+  height: 30px;
+  border: 1px solid #818285;
+  border-radius: 6px; }
 
 .submitSearch {
-  display: flex;
-  justify-content: center;
-  width: 20%;
+  display: block;
   margin: 10px;
-  padding: 5px; }
+  padding: 5px 20px;
+  border: 1px solid #3A3A3D;
+  color: #3A3A3D;
+  background-color: #818285;
+  border-radius: 6px; }
   .submitSearch:hover {
     background-color: #F7941E; }
 

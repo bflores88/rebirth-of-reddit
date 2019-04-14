@@ -1,23 +1,34 @@
 .search {
-  width: 30vw;
-  position: absolute;
-  top: 40%;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $textFont;
+
+  @media only screen and (min-width: 671px){
+    margin-top: 20%;
+  }
 }
 
 .searchInput {
   width: 100%;
+  height: 30px;
+  border: 1px solid $lightgray;
+  border-radius: 6px;
 }
 
 .submitSearch {
-  display: flex;
-  justify-content: center;
-  width: 20%;
+  display: block;
   margin: 10px;
-  padding: 5px;
+  padding: 5px 20px;
+  border: 1px solid $graybar;
+  color: $graybar;
+  background-color: $lightgray;
+  border-radius: 6px;
   &:hover {
     background-color: $cardorange;
   }
