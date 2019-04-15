@@ -96,7 +96,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 125px 3vw 10px 3vw; } }
+      padding: 125px 1.5vw 10px 1.5vw; } }
   @media only screen and (min-width: 1201px) {
     #content {
       padding-top: 125px;
@@ -130,9 +130,9 @@
   margin-left: auto; }
   @media only screen and (min-width: 671px) {
     .subContent {
-      width: 38vw;
+      width: 39vw;
       height: 42vw;
-      margin: 10px;
+      margin: 1.5vw;
       padding: 20px; } }
   @media only screen and (min-width: 1201px) {
     .subContent {
