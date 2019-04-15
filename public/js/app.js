@@ -115,19 +115,6 @@ function getData(string) {
   subRedditReq.send();
 }
 
-let plusHover = document.getElementById('plus');
-plusHover.addEventListener('mouseover', changeSign);
-
-function changeSign(){
-  if(plusHover.alt === 'plus'){
-    plusHover.alt = 'minus';
-    plusHover.src = 'assets/plus_hover.svg';
-  } else {
-    plusHover.alt = 'plus';
-    plusHover.src = 'assets/plus_sign.svg';
-  }
-}
-
 logo.addEventListener('click', refreshWindow);
 
 function refreshWindow(){

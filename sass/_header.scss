@@ -4,16 +4,16 @@
 }
 
 #whiteHeader {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   height: 55px;
 
-  @media only screen and (min-width: 671px){
+  @media only screen and (min-width: 671px) {
     max-height: 75px;
     display: flex;
     justify-content: center;
   }
 
-  @media only screen and (min-width: 992px){
+  @media only screen and (min-width: 992px) {
     max-height: 80px;
   }
 }
@@ -21,27 +21,43 @@
 #headerBG {
   display: none;
 
-  @media only screen and (min-width: 671px){
+  @media only screen and (min-width: 671px) {
     display: initial;
     position: absolute;
     top: 20%;
   }
-
 }
 
 #logo {
   position: relative;
 
-  @media only screen and (min-width: 671px){
+  @media only screen and (min-width: 671px) {
     position: absolute;
   }
 }
 
-#plus {
+.plusImg {
+  display: block;
   position: absolute;
   right: 5px;
   top: 5px;
-  height: 45px;
+
+  .plus {
+    height: 45px;
+  }
+  
+  .plusHover {
+    display: none;
+  }
+
+  &:hover {
+    .plus {
+      display: none;
+    }
+    .plusHover {
+      display: block;
+    }
+  }
 }
 
 #greyHeader {
@@ -51,24 +67,23 @@
   flex-direction: row;
   justify-content: space-evenly;
 
-  @media only screen and (min-width: 671px){
+  @media only screen and (min-width: 671px) {
     height: 50px;
     justify-content: center;
-  };
+  }
 }
 
 .dot {
   display: none;
   color: $lightgray;
 
-  @media only screen and (min-width: 671px){
+  @media only screen and (min-width: 671px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1px;
     text-align: center;
   }
-
 }
 
 .favorites {
@@ -79,19 +94,18 @@
   width: 25%;
   text-align: center;
   border-right: 1px solid $lightgray;
-  &:last-child{
+  &:last-child {
     border: 0;
-  };
+  }
   font-family: $headingFont;
   color: $lightgray;
   &:hover {
-    color: #EB582A;
+    color: #eb582a;
     cursor: pointer;
   }
 
-  @media only screen and (min-width: 671px){
+  @media only screen and (min-width: 671px) {
     border-right: none;
     width: auto;
-
   }
 }

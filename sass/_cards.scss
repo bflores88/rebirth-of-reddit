@@ -15,7 +15,7 @@
 
   @media only screen and (min-width: 1201px){
     padding-top: 125px;
-    width: 45%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -33,11 +33,8 @@
   }
 
   @media only screen and (min-width: 1201px){
-    justify-content: flex-start;
-    align-content: center;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
   }
 }
 
@@ -60,13 +57,13 @@
   }
 
   @media only screen and (min-width: 1201px){
-    width: 17vw;
-    height: 18vw;
-    margin: 15px;
-    padding: 15px;
+    width: 19vw;
+    height: 20vw;
+    margin: 10px;
+    padding: 20px;
     &:hover {
       border: 8px solid $cardorange;
-      padding: 7px;
+      padding: 12px;
     }
   }
 }

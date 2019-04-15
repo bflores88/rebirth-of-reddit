@@ -3,7 +3,7 @@
   width: 100%; }
 
 #whiteHeader {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   height: 55px; }
   @media only screen and (min-width: 671px) {
     #whiteHeader {
@@ -28,11 +28,19 @@
     #logo {
       position: absolute; } }
 
-#plus {
+.plusImg {
+  display: block;
   position: absolute;
   right: 5px;
-  top: 5px;
-  height: 45px; }
+  top: 5px; }
+  .plusImg .plus {
+    height: 45px; }
+  .plusImg .plusHover {
+    display: none; }
+  .plusImg:hover .plus {
+    display: none; }
+  .plusImg:hover .plusHover {
+    display: block; }
 
 #greyHeader {
   background-color: #3A3A3D;
@@ -69,7 +77,7 @@
   .favorites:last-child {
     border: 0; }
   .favorites:hover {
-    color: #EB582A;
+    color: #eb582a;
     cursor: pointer; }
   @media only screen and (min-width: 671px) {
     .favorites {
@@ -92,7 +100,7 @@
   @media only screen and (min-width: 1201px) {
     #content {
       padding-top: 125px;
-      width: 45%;
+      width: 50%;
       margin-left: auto;
       margin-right: auto; } }
 
@@ -107,11 +115,8 @@
       flex-wrap: wrap; } }
   @media only screen and (min-width: 1201px) {
     .container {
-      justify-content: flex-start;
-      align-content: center;
       margin-left: auto;
-      margin-right: auto;
-      padding-left: 15px; } }
+      margin-right: auto; } }
 
 .subContent {
   background-color: #FFFFFF;
@@ -131,13 +136,13 @@
       padding: 20px; } }
   @media only screen and (min-width: 1201px) {
     .subContent {
-      width: 17vw;
-      height: 18vw;
-      margin: 15px;
-      padding: 15px; }
+      width: 19vw;
+      height: 20vw;
+      margin: 10px;
+      padding: 20px; }
       .subContent:hover {
         border: 8px solid #F7941E;
-        padding: 7px; } }
+        padding: 12px; } }
 
 .subImg {
   width: 100%;
