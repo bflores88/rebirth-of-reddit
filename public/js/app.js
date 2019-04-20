@@ -93,7 +93,8 @@ function getData(subreddit) {
 logo.addEventListener('click', refreshContent);
 
 function refreshContent(){
-  getData(lastSubreddit);
+  // getData(lastSubreddit);
+  location.reload();
 }
 
 instantPot.addEventListener('mousedown', getIPdata);
@@ -137,5 +138,5 @@ function goSearchReddit(){
 
   setTimeout(function(){ let updateDefaultError = document.querySelector('.errorNotice');
   updateDefaultError.style.display = 'block';
-   }, 1000);
+   }, 3000);
 }
