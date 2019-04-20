@@ -4,11 +4,13 @@ let lastSubreddit = '';
 
 function getData(subreddit) {
   lastSubreddit = subreddit;
+  let posts = '';
 
   function subRedditReqListener() {
     content.innerHTML = '';
 
-    let posts = JSON.parse(this.responseText).data.children;
+    posts = JSON.parse(this.responseText).data.children;
+    console.log(posts);
 
     let contentHolder = document.createElement('div');
     contentHolder.className = 'container';
@@ -33,9 +35,9 @@ function getData(subreddit) {
         let imgHere = document.createElement('img');
         imgHere.className = 'redditImage';
         imgHere.src = post.data.thumbnail;
-        imgHere.onerror = function (){
+        imgHere.onerror = function() {
           imgHere.src = 'http://trifectaecosystems.com/wp-content/uploads/2015/04/snoo-300x208.jpg';
-        }
+        };
         subImg.appendChild(imgHere);
       }
 
@@ -64,7 +66,7 @@ function getData(subreddit) {
 
       let timelapse = document.createElement('div');
       timelapse.className = 'timelapse statsItem';
-      timelapse.innerHTML = timeSince(post.data.created*1000)
+      timelapse.innerHTML = timeSince(post.data.created * 1000);
       statsDiv.appendChild(timelapse);
 
       let dot2 = document.createElement('div');
@@ -84,6 +86,11 @@ function getData(subreddit) {
     });
   }
 
+  if (!posts) {
+    let updateDefaultError = document.querySelector('.errorNotice');
+    updateDefaultError.style.display = 'block';
+  }
+
   let subRedditReq = new XMLHttpRequest();
   subRedditReq.addEventListener('load', subRedditReqListener);
   subRedditReq.open('GET', `https://www.reddit.com/r/${subreddit}.json`);
@@ -92,9 +99,8 @@ function getData(subreddit) {
 
 logo.addEventListener('click', refreshContent);
 
-function refreshContent(){
-  // getData(lastSubreddit);
-  location.reload();
+function refreshContent() {
+  getData(lastSubreddit);
 }
 
 instantPot.addEventListener('mousedown', getIPdata);
@@ -132,11 +138,7 @@ function getRandom() {
 let searchReddit = document.querySelector('.submitSearch');
 searchReddit.addEventListener('click', goSearchReddit);
 
-function goSearchReddit(){
+function goSearchReddit() {
   let getInput = document.querySelector('.searchInput');
   getData(getInput.value);
-
-  setTimeout(function(){ let updateDefaultError = document.querySelector('.errorNotice');
-  updateDefaultError.style.display = 'block';
-   }, 3000);
 }
