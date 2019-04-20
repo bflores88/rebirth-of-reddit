@@ -134,7 +134,8 @@ searchReddit.addEventListener('click', goSearchReddit);
 function goSearchReddit(){
   let getInput = document.querySelector('.searchInput');
   getData(getInput.value);
-  
-  let updateDefaultError = document.querySelector('.errorNotice');
+
+  setTimeout(function(){ let updateDefaultError = document.querySelector('.errorNotice');
   updateDefaultError.style.display = 'block';
+   }, 1000);
 }
