@@ -1,18 +1,20 @@
 'use strict';
 
+let lastSubreddit = '';
 
-function getData(string) {
+function getData(subreddit) {
+  lastSubreddit = subreddit;
 
   function subRedditReqListener() {
     content.innerHTML = '';
 
-    let object = JSON.parse(this.responseText).data.children;
+    let posts = JSON.parse(this.responseText).data.children;
 
     let contentHolder = document.createElement('div');
     contentHolder.className = 'container';
     content.appendChild(contentHolder);
 
-    object.forEach((elem) => {
+    posts.forEach((post) => {
       let subContent = document.createElement('div');
       subContent.className = 'subContent';
       contentHolder.appendChild(subContent);
@@ -20,19 +22,17 @@ function getData(string) {
       subContent.addEventListener('click', goToLink);
 
       function goToLink() {
-        window.open(elem.data.url, '_blank');
+        window.open(post.data.url, '_blank');
       }
 
-      console.log(elem.data.thumbnail.onload)
-
-      if (elem.data.thumbnail !== 'self') {
+      if (post.data.thumbnail !== 'self') {
         let subImg = document.createElement('div');
         subImg.className = 'subImg';
         subContent.appendChild(subImg);
 
         let imgHere = document.createElement('img');
         imgHere.className = 'redditImage';
-        imgHere.src = elem.data.thumbnail;
+        imgHere.src = post.data.thumbnail;
         imgHere.onerror = function (){
           imgHere.src = 'http://trifectaecosystems.com/wp-content/uploads/2015/04/snoo-300x208.jpg';
         }
@@ -41,7 +41,7 @@ function getData(string) {
 
       let titleDiv = document.createElement('div');
       titleDiv.className = 'title';
-      titleDiv.innerHTML = elem.data.title;
+      titleDiv.innerHTML = post.data.title;
       subContent.appendChild(titleDiv);
 
       let statsDiv = document.createElement('div');
@@ -50,7 +50,7 @@ function getData(string) {
 
       let author = document.createElement('div');
       author.className = 'author statsItem';
-      author.innerHTML = elem.data.author;
+      author.innerHTML = post.data.author;
       statsDiv.appendChild(author);
 
       let dot = document.createElement('div');
@@ -59,8 +59,6 @@ function getData(string) {
       statsDiv.appendChild(dot);
 
       function timeSince(date) {
-
-
         let seconds = Math.floor((new Date() - date) / 1000);
       
         let interval = Math.floor(seconds / 31536000);
@@ -89,7 +87,7 @@ function getData(string) {
 
       let timelapse = document.createElement('div');
       timelapse.className = 'timelapse statsItem';
-      timelapse.innerHTML = timeSince(new Date(elem.data.created*1000))
+      timelapse.innerHTML = timeSince(new Date(post.data.created*1000))
       statsDiv.appendChild(timelapse);
 
       let dot2 = document.createElement('div');
@@ -99,26 +97,26 @@ function getData(string) {
 
       let score = document.createElement('div');
       score.className = 'score statsItem';
-      score.innerHTML = `${elem.data.score} upvotes`;
+      score.innerHTML = `${post.data.score} upvotes`;
       statsDiv.appendChild(score);
 
       let selfText = document.createElement('div');
       selfText.className = 'selfText';
-      selfText.innerHTML = elem.data.selftext;
+      selfText.innerHTML = post.data.selftext;
       subContent.appendChild(selfText);
     });
   }
 
   let subRedditReq = new XMLHttpRequest();
   subRedditReq.addEventListener('load', subRedditReqListener);
-  subRedditReq.open('GET', `https://www.reddit.com/r/${string}.json`);
+  subRedditReq.open('GET', `https://www.reddit.com/r/${subreddit}.json`);
   subRedditReq.send();
 }
 
-logo.addEventListener('click', refreshWindow);
+logo.addEventListener('click', refreshContent);
 
-function refreshWindow(){
-  location.reload();
+function refreshContent(){
+  getData(lastSubreddit);
 }
 
 instantPot.addEventListener('mousedown', getIPdata);
