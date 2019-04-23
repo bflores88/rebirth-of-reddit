@@ -10,7 +10,6 @@ function getData(subreddit) {
     content.innerHTML = '';
 
     posts = JSON.parse(this.responseText).data.children;
-    console.log(posts);
 
     let contentHolder = document.createElement('div');
     contentHolder.className = 'container';
