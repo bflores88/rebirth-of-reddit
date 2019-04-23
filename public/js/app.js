@@ -6,10 +6,20 @@ function getData(subreddit) {
   lastSubreddit = subreddit;
   let posts = '';
 
+  function subRedditErrorHandler() {
+    let updateDefaultError = document.querySelector('.errorNotice');
+    updateDefaultError.style.display = 'block';
+  }
+
   function subRedditReqListener() {
     content.innerHTML = '';
 
     posts = JSON.parse(this.responseText).data.children;
+
+    if (!posts) {
+      let updateDefaultError = document.querySelector('.errorNotice');
+      updateDefaultError.style.display = 'block';
+    }
 
     let contentHolder = document.createElement('div');
     contentHolder.className = 'container';
@@ -85,13 +95,9 @@ function getData(subreddit) {
     });
   }
 
-  if (!posts) {
-    let updateDefaultError = document.querySelector('.errorNotice');
-    updateDefaultError.style.display = 'block';
-  }
-
   let subRedditReq = new XMLHttpRequest();
   subRedditReq.addEventListener('load', subRedditReqListener);
+  subRedditReq.addEventListener('error', subRedditErrorHandler);
   subRedditReq.open('GET', `https://www.reddit.com/r/${subreddit}.json`);
   subRedditReq.send();
 }
