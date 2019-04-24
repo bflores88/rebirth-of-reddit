@@ -9,16 +9,20 @@ function getData(subreddit) {
   function subRedditErrorHandler() {
     let updateDefaultError = document.querySelector('.errorNotice');
     updateDefaultError.style.display = 'block';
+    return;
   }
 
   function subRedditReqListener() {
     content.innerHTML = '';
 
-    posts = JSON.parse(this.responseText).data.children;
+    const data = JSON.parse(this.responseText).data;
 
-    if (!posts) {
+    if (!data) {
       let updateDefaultError = document.querySelector('.errorNotice');
       updateDefaultError.style.display = 'block';
+      return;
+    } else {
+      posts = data.children;
     }
 
     let contentHolder = document.createElement('div');
