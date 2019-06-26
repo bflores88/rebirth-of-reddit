@@ -1,0 +1,17 @@
+$graybar: #3A3A3D;
+$lightgray: #818285;
+$cardorange: #F7941E;
+$headingFont: 'Oswald', sans-serif;
+$textFont: 'Lato', sans-serif;
+
+@import 'header';
+@import 'cards';
+@import 'searchbar';
+@import 'footer';
+
+body {
+  background-image: url('/assets/bg.jpg');
+  background-size: cover;
+  margin: 0px;
+  align-items: center;
+}

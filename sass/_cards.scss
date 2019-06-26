@@ -1,0 +1,145 @@
+#content {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 100px 10px 10px 10px;
+
+  @media only screen and (min-width: 671px){
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 125px 1.5vw 10px 1.5vw;
+  }
+
+  @media only screen and (min-width: 1201px){
+    padding-top: 125px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 75px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  @media only screen and (min-width: 671px){
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media only screen and (min-width: 1201px){
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.subContent {
+  background-color: #FFFFFF;
+  padding: 10px;
+  width: 95%;
+  margin-top: 10px;
+  align-items: center;
+  height: 375px;
+  overflow: auto;
+  margin-left: auto;
+  margin-left: auto;
+
+  @media only screen and (min-width: 671px){
+    width: 39vw;
+    height: 42vw;
+    margin: 1.5vw;
+    padding: 20px;
+  }
+
+  @media only screen and (min-width: 1201px){
+    width: 19vw;
+    height: 20vw;
+    margin: 10px;
+    padding: 20px;
+    &:hover {
+      border: 8px solid $cardorange;
+      padding: 12px;
+    }
+  }
+}
+
+.subImg {
+  width: 100%;
+  min-height: 200px;
+  max-height: 300px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  overflow: hidden;
+
+  @media only screen and (min-width: 1201px){
+    max-height: 200px;
+  }
+  
+}
+
+.redditImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.title {
+  font-family: $headingFont;
+  color: $graybar;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: $textFont;
+  color: $lightgray;
+  font-size: 16px;
+  margin-top: 5px;
+
+  @media only screen and (min-width: 671px){
+    font-size: 11px;
+  }
+}
+
+.statDot {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.selfText {
+  font-family: $textFont;
+  color: black;
+  font-size: 14px;
+  width: auto;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+
+  @media only screen and (min-width: 671px){
+    -webkit-line-clamp: 4;
+  }
+}
